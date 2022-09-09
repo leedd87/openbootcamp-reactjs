@@ -25,15 +25,19 @@ const Ejemplo2 = () => {
 
 	//Caso 2: Ejecutar SOLO cuando cambie el CONTADOR1
 
-	useEffect(() => {
-		console.log(
-			"Cambio en el estado del componente cuando se ejecuta el CONTADOR1"
-			console.log("Mostrando referencia al elemento del DOM");
+	// useEffect(() => {
+	// 	console.log("Cambio en el estado del CONTADOR1");
+	// 	console.log("Mostrando referencia al elemento del DOM");
 	// 	console.log(miRef);
-		);
+	// }, [contador1]);
+
+	//Caso 3: Ejecuta cuando cambie el CONTADOR1 o CONTADOR2
+
+	useEffect(() => {
+		console.log("Cambio en el estado del CONTADOR1");
 		console.log("Mostrando referencia al elemento del DOM");
 		console.log(miRef);
-	}, [contador1]);
+	}, [contador1, contador2]);
 
 	return (
 		<div>

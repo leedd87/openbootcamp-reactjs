@@ -1,9 +1,6 @@
 import React from "react";
 
 const Ejemplo4 = (props) => {
-	console.log("Hello World");
-	console.log("Plant base console log");
-	console.log("Hello Kitty");
 	return (
 		<div>
 			<h1>****Ejemplo de CHILDREN PROPS****</h1>

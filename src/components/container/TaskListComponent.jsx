@@ -11,9 +11,11 @@ const TaskListComponent = () => {
 		LEVELS.NORMAL
 	);
 	const [tasks, setTasks] = useState([defaultTask]);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		console.log("Task state has been modified");
+		setLoading(false);
 
 		return () => {
 			console.log("TaskList component is going to unmount");

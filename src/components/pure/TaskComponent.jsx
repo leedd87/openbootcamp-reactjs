@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Task } from "../../models/task.class";
 import { cleanup } from "@testing-library/react";
 
+import "../../styles/task.scss";
+
 function TaskComponent({ task }) {
 	useEffect(() => {
 		console.log("Created task");

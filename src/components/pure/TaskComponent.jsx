@@ -23,15 +23,14 @@ function TaskComponent({ task }) {
 				<span>{task.level}</span>
 			</td>
 			<td className="align-middle">
+				{task.completed ? (
+					<i className="bi-toggle-on" style={{ color: "green" }}></i>
+				) : (
+					<i className="bi-toggle-off" style={{ color: "gray" }}></i>
+				)}
 				<span>{task.completed ? "COMPLETED" : "PENDING"}</span>
 			</td>
 		</tr>
-		// <div>
-		// 	<h2>Nombre: {task.name}</h2>
-		// 	<h3>Descripcion: {task.description}</h3>
-		// 	<h4>Level: {task.level}</h4>
-		// 	<h5>This task is: {task.completed ? "COMPLETED" : "PENDING"}</h5>
-		// </div>
 	);
 }
 

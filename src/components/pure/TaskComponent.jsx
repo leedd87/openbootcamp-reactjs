@@ -23,7 +23,7 @@ function TaskComponent({ task }) {
 				<span>{task.level}</span>
 			</td>
 			<td className="align-middle">
-				<span>{task.completed}</span>
+				<span>{task.completed ? "COMPLETED" : "PENDING"}</span>
 			</td>
 		</tr>
 		// <div>

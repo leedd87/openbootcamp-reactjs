@@ -7,7 +7,7 @@ const TaskListComponent = () => {
 	const defaultTask = new Task(
 		"Example",
 		"Default description",
-		true,
+		false,
 		LEVELS.NORMAL
 	);
 	const [tasks, setTasks] = useState([defaultTask]);

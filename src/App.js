@@ -5,14 +5,14 @@ import "./App.css";
 // import GreetingStyled from "./components/pure/GreetingStyled";
 //import Greeting from "./components/pure/Greeting";
 // import GreetingF from "./components/pure/GreetingF";
-import TaskListComponent from "./components/container/TaskListComponent";
 // import ContactContainerComponent from "./components/container/ContactContainerComponent";
+//import TaskListComponent from "./components/container/TaskListComponent";
+import Father from "./components/container/Father";
 
 function App() {
 	return (
 		<div className="App">
 			{/* <GreetingF /> */}
-			<TaskListComponent />
 			{/* <ContactContainerComponent /> */}
 			{/* <Ejemplo1 /> */}
 			{/* <Ejemplo2 /> */}
@@ -21,6 +21,8 @@ function App() {
 					<h3>Contenido del props.children</h3>
 				</Ejemplo4> */}
 			{/* <GreetingStyled name="David" /> */}
+			{/* <TaskListComponent /> */}
+			<Father />
 		</div>
 	);
 }

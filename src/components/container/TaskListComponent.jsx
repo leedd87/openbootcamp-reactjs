@@ -4,13 +4,32 @@ import { Task } from "../../models/task.class";
 import TaskComponent from "../pure/TaskComponent";
 
 const TaskListComponent = () => {
-	const defaultTask = new Task(
-		"Example",
-		"Default description",
+	const defaultTask1 = new Task(
+		"Example1",
+		"Description1",
 		true,
 		LEVELS.NORMAL
 	);
-	const [tasks, setTasks] = useState([defaultTask]);
+
+	const defaultTask2 = new Task(
+		"Example2",
+		"Description2",
+		false,
+		LEVELS.URGENT
+	);
+
+	const defaultTask3 = new Task(
+		"Example3",
+		"Description3",
+		false,
+		LEVELS.BLOCKING
+	);
+
+	const [tasks, setTasks] = useState([
+		defaultTask1,
+		defaultTask2,
+		defaultTask3,
+	]);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
@@ -48,8 +67,9 @@ const TaskListComponent = () => {
 									</tr>
 								</thead>
 								<tbody>
-									{/*TODOS: Acplicar un For/Map para rendrizar una lista */}
-									<TaskComponent task={defaultTask}></TaskComponent>
+									{tasks.map((task, index) => {
+										return <TaskComponent key={index} task={task} />;
+									})}
 								</tbody>
 							</table>
 						</div>

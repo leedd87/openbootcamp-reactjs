@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 
-const Child = ({ name, send }) => {
+const Child = ({ name, send, update }) => {
 	const messageRef = useRef("");
+	const nameRef = useRef("");
 
 	function pressButton() {
 		const text = messageRef.current.value;
@@ -12,9 +13,14 @@ const Child = ({ name, send }) => {
 		alert(`Text: ${text}`);
 	}
 
+	function submitName(e) {
+		e.preventDefault();
+		update(nameRef.current.value);
+	}
+
 	return (
 		<div style={{ backgroundColor: "green", padding: "10px" }}>
-			<p onMouseOver={() => console.log("On mouse Over")}>Child component</p>
+			<p onMouseOver={() => console.log("On mouse Over")}>Hello {name}</p>
 			<button onClick={() => console.log("Pressed Button 1")}>
 				Button 1
 			</button>
@@ -30,6 +36,12 @@ const Child = ({ name, send }) => {
 			<button onClick={() => send(messageRef.current.value)}>
 				Send message
 			</button>
+			<div style={{ marginTop: "20px" }}>
+				<form onSubmit={submitName}>
+					<input placeholder="New Name" ref={nameRef} />
+					<button type="submit">Update Name</button>
+				</form>
+			</div>
 		</div>
 	);
 };

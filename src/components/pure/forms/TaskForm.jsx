@@ -1,7 +1,11 @@
 import React, { useRef } from "react";
 
 const TaskForm = () => {
-	return <form></form>;
+	return (
+		<form>
+			<input type="submit" />
+		</form>
+	);
 };
 
 export default TaskForm;

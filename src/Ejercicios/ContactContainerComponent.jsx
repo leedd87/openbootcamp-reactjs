@@ -1,13 +1,13 @@
 import React from "react";
-import { Contact } from "../../models/contact.class";
-import ContactComponent from "../pure/ContactComponent";
+import { Contact } from "../models/contact.class";
+import ContactComponent from "./ContactComponent";
 
 const ContactContainerComponent = () => {
 	const defaultContact = new Contact(
 		"David",
 		"Lee",
 		"davidlee@email.com",
-		true
+		false
 	);
 
 	return (

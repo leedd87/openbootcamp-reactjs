@@ -66,6 +66,14 @@ const TaskListComponent = () => {
 		setTasks(tempTasks);
 	}
 
+	function addTask(task) {
+		console.log("Complete this Task:", task);
+		const index = tasks.indexOf(task);
+		const tempTasks = [...tasks];
+		tempTasks.push(task);
+		setTasks(tempTasks);
+	}
+
 	return (
 		<div>
 			<div className="col-12">
@@ -101,10 +109,10 @@ const TaskListComponent = () => {
 								</tbody>
 							</table>
 						</div>
-						<TaskForm />
 					</div>
 				</div>
 			</div>
+			<TaskForm add={addTask} />
 		</div>
 	);
 };

@@ -26,6 +26,7 @@ const TaskListComponent = () => {
 		LEVELS.BLOCKING
 	);
 
+	//Estado del componente
 	const [tasks, setTasks] = useState([
 		defaultTask1,
 		defaultTask2,
@@ -33,6 +34,7 @@ const TaskListComponent = () => {
 	]);
 	const [loading, setLoading] = useState(true);
 
+	//Control del ciclo del vida del componente
 	useEffect(() => {
 		console.log("Task state has been modified");
 		setLoading(false);
@@ -45,6 +47,16 @@ const TaskListComponent = () => {
 	const changeCompleted = (id) => {
 		console.log("TODO: Cambiar estado de una tarea");
 	};
+
+	function completeTask(task) {
+		console.log("Complete this Task:", task);
+		const index = tasks.indexOf(task);
+		const tempTasks = [...tasks];
+		tempTasks[index].completed = !tempTasks[index].completed;
+
+		//We update the state of the component with the new list of tasks and it will update the iteration of the tasks in order to show the task updated
+		setTasks(tempTasks);
+	}
 
 	return (
 		<div>
@@ -69,7 +81,13 @@ const TaskListComponent = () => {
 								</thead>
 								<tbody>
 									{tasks.map((task, index) => {
-										return <TaskComponent key={index} task={task} />;
+										return (
+											<TaskComponent
+												key={index}
+												task={task}
+												complete={completeTask}
+											/>
+										);
 									})}
 								</tbody>
 							</table>

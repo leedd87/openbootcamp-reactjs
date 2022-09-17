@@ -6,8 +6,8 @@ import "./App.css";
 //import Greeting from "./components/pure/Greeting";
 // import GreetingF from "./components/pure/GreetingF";
 // import ContactContainerComponent from "./components/container/ContactContainerComponent";
-//import TaskListComponent from "./components/container/TaskListComponent";
-import Father from "./components/container/Father";
+//import Father from "./components/container/Father";
+import TaskListComponent from "./components/container/TaskListComponent";
 
 function App() {
 	return (
@@ -21,8 +21,7 @@ function App() {
 					<h3>Contenido del props.children</h3>
 				</Ejemplo4> */}
 			{/* <GreetingStyled name="David" /> */}
-			{/* <TaskListComponent /> */}
-			<Father />
+			<TaskListComponent />
 		</div>
 	);
 }

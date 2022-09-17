@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Task } from "../../models/task.class";
 import { LEVELS } from "../../models/levels.enum";
+import "../../styles/task.css";
 
-function TaskComponent({ task }) {
+function TaskComponent({ task, complete }) {
 	useEffect(() => {
 		console.log("Created task");
 
@@ -40,9 +41,21 @@ function TaskComponent({ task }) {
 
 	function taskCompletedIcon() {
 		if (task.completed) {
-			return <i className="bi-toggle-on" style={{ color: "green" }}></i>;
+			return (
+				<i
+					onClick={() => complete(task)} //se dispara cuando el elemento se ejecute
+					className="bi-toggle-on task-action"
+					style={{ color: "green" }}
+				></i>
+			);
 		} else {
-			return <i className="bi-toggle-off" style={{ color: "gray" }}></i>;
+			return (
+				<i
+					onClick={() => complete(task)}
+					className="bi-toggle-off task-action"
+					style={{ color: "gray" }}
+				></i>
+			);
 		}
 	}
 
@@ -56,20 +69,16 @@ function TaskComponent({ task }) {
 			</td>
 			<td className="align-middle">{taskLevelBadge()}</td>
 			<td className="align-middle">
-				{/* {task.completed ? (
-					<i className="bi-toggle-on" style={{ color: "green" }}></i>
-				) : (
-					<i className="bi-toggle-off" style={{ color: "gray" }}></i>
-				)} */}
 				{taskCompletedIcon()}
-				<i className="bi-trash" style={{ color: "tomato" }}></i>
+				<i className="bi-trash task-action" style={{ color: "tomato" }}></i>
 			</td>
 		</tr>
 	);
 }
 
 TaskComponent.propTypes = {
-	task: PropTypes.instanceOf(Task),
+	task: PropTypes.instanceOf(Task).isRequired,
+	complete: PropTypes.func.isRequired,
 };
 
 export default TaskComponent;

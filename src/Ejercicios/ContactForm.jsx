@@ -1,19 +1,6 @@
 import React, { useState } from "react";
-import ContactComponent from "./ContactComponent";
 
 const ContactForm = () => {
-	// function addTask(e) {
-	// 	e.preventDefault();
-	// 	const newTask = new Contact(
-	// 		nameRef.current.value,
-	// 		surNameRef.current.value,
-	// 		emailRef.current.value,
-
-	// 		connectedRef.current.value
-	// 	);
-	// 	add(newTask);
-	// }
-
 	const [name, setName] = useState("");
 	const [surName, setSurName] = useState("");
 	const [email, setEmail] = useState("");

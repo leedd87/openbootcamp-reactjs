@@ -3,32 +3,33 @@ import PropTypes from "prop-types";
 import { Contact } from "../models/contact.class";
 
 const ContactComponent = ({ contact }) => {
+	console.log(contact);
 	return (
 		<>
-			{/* <h2>Nombre: {contact.name}</h2>
-			<h2>Apellido: {contact.surname}</h2>
-			<h2>Email: {contact.email}</h2>
-			<h2>
-				{contact.name} is:{" "}
-				{contact.connected ? "Esta conectado" : "No esta conectado"}
-			</h2> */}
-
-			<tr className="fw-normal">
-				<td className="align-middle">
-					<span className="me-2">{contact.name}</span>
-				</td>
-				<td className="align-middle">
-					<span className="me-2">{contact.surname}</span>
-				</td>
-				<td className="align-middle">
-					<span className="me-2">{contact.email}</span>
-				</td>
-				<td className="align-middle">
-					<span>
-						{contact.connected ? "Esta conectado" : "No esta conectado"}
-					</span>
-				</td>
-			</tr>
+			{contact &&
+				contact.map((e) => {
+					console.log(e);
+					return (
+						<tr className="fw-normal">
+							<td className="align-middle">
+								<span className="me-2">{e.name}</span>
+							</td>
+							<td className="align-middle">
+								<span className="me-2">{e.surname}</span>
+							</td>
+							<td className="align-middle">
+								<span className="me-2">{e.email}</span>
+							</td>
+							<td className="align-middle">
+								<span>
+									{e.connected
+										? "Esta conectado"
+										: "No esta conectado"}
+								</span>
+							</td>
+						</tr>
+					);
+				})}
 		</>
 	);
 };

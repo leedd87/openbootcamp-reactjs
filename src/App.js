@@ -5,16 +5,16 @@ import "./App.css";
 // import GreetingStyled from "./components/pure/GreetingStyled";
 //import Greeting from "./components/pure/Greeting";
 // import GreetingF from "./components/pure/GreetingF";
-import ContactContainerComponent from "./Ejercicios/ContactContainerComponent";
+//import ContactContainerComponent from "./Ejercicios/ContactContainerComponent";
 //import Father from "./components/container/Father";
-//import TaskListComponent from "./components/container/TaskListComponent";
+import TaskListComponent from "./components/container/TaskListComponent";
 
 function App() {
 	console.log("Hello World");
 	return (
 		<div className="App">
 			{/* <GreetingF /> */}
-			<ContactContainerComponent />
+			{/* <ContactContainerComponent /> */}
 			{/* <Ejemplo1 /> */}
 			{/* <Ejemplo2 /> */}
 			{/* Todo lo que hay aqui, es tratado como un props.children */}
@@ -22,7 +22,7 @@ function App() {
 					<h3>Contenido del props.children</h3>
 				</Ejemplo4> */}
 			{/* <GreetingStyled name="David" /> */}
-			{/* <TaskListComponent /> */}
+			<TaskListComponent />
 		</div>
 	);
 }

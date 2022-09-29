@@ -10,6 +10,7 @@ import ContactContainerComponent from "./Ejercicios/ContactContainerComponent";
 //import TaskListComponent from "./components/container/TaskListComponent";
 
 function App() {
+	console.log("Hello World");
 	return (
 		<div className="App">
 			{/* <GreetingF /> */}

@@ -11,6 +11,7 @@ const LogoutButton = ({ logoutAction }) => {
 
 const OptionalRender = () => {
 	const [access, setAccess] = useState(true);
+	const [nMessages, setNMessages] = useState(0);
 
 	// const updateAccess = () => {
 	// 	setAccess(!access);
@@ -34,7 +35,18 @@ const OptionalRender = () => {
 		optionalButton = <LoginButton loginAction={loginAction}></LoginButton>;
 	}
 
-	return <div>{optionalButton}</div>;
+	let addMessages = () => {
+		setNMessages(nMessages + 1);
+	};
+
+	return (
+		<div>
+			{optionalButton}
+			{nMessages > 0 && <p>You have {nMessages} new messages</p>}
+			{nMessages === 0 && <p>There are no new messages</p>}
+			<button onClick={addMessages}>Add new messages</button>
+		</div>
+	);
 };
 
 export default OptionalRender;

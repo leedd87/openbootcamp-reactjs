@@ -4,6 +4,7 @@ const Child = ({ name, send, update }) => {
 	const messageRef = useRef("");
 	const nameRef = useRef("");
 	console.log("hello universo");
+	console.log("hola mundo");
 	function pressButton() {
 		const text = messageRef.current.value;
 		alert(`Text in input: ${text}`);

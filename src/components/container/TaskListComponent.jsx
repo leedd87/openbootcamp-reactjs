@@ -3,6 +3,7 @@ import { LEVELS } from "../../models/levels.enum";
 import { Task } from "../../models/task.class";
 import TaskForm from "../pure/forms/TaskForm";
 import TaskComponent from "../pure/TaskComponent";
+import "../../styles/task.css";
 
 const TaskListComponent = () => {
 	const defaultTask1 = new Task(
@@ -68,10 +69,50 @@ const TaskListComponent = () => {
 
 	function addTask(task) {
 		console.log("Complete this Task:", task);
-		const index = tasks.indexOf(task);
+
 		const tempTasks = [...tasks];
 		tempTasks.push(task);
 		setTasks(tempTasks);
+	}
+
+	const Table = () => {
+		return (
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Title</th>
+						<th scope="col">Description</th>
+						<th scope="col">Priority</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{tasks.map((task, index) => {
+						return (
+							<TaskComponent
+								key={index}
+								task={task}
+								complete={completeTask}
+								remove={deleteTask}
+							/>
+						);
+					})}
+				</tbody>
+			</table>
+		);
+	};
+
+	let taskTable;
+
+	if (tasks.length > 0) {
+		taskTable = <Table></Table>;
+	} else {
+		taskTable = (
+			<div>
+				<h3>There are no tasks to show</h3>
+				<h4>Please create a task</h4>
+			</div>
+		);
 	}
 
 	return (
@@ -86,28 +127,7 @@ const TaskListComponent = () => {
 							className="card-body"
 							style={{ position: "relative", height: "400px" }}
 						>
-							<table>
-								<thead>
-									<tr>
-										<th scope="col">Title</th>
-										<th scope="col">Description</th>
-										<th scope="col">Priority</th>
-										<th scope="col">Actions</th>
-									</tr>
-								</thead>
-								<tbody>
-									{tasks.map((task, index) => {
-										return (
-											<TaskComponent
-												key={index}
-												task={task}
-												complete={completeTask}
-												remove={deleteTask}
-											/>
-										);
-									})}
-								</tbody>
-							</table>
+							{taskTable}
 						</div>
 					</div>
 				</div>

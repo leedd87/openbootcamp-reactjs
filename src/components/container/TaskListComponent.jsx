@@ -132,7 +132,7 @@ const TaskListComponent = () => {
 					</div>
 				</div>
 			</div>
-			<TaskForm add={addTask} />
+			<TaskForm add={addTask} length={tasks.length} />
 		</div>
 	);
 };

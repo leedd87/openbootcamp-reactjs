@@ -5,13 +5,13 @@ let green = 200;
 let blue = 150;
 
 //Estilo usuario logueado
-const loggedStyle = {
+const unloggedStyle = {
 	backgroundColor: `rgb(${red},${green},${blue})`,
 	color: "white",
 };
 
 //Estilo usuario no logueado
-const unloggedStyle = {
+const loggedStyle = {
 	backgroundColor: "tomato",
 	color: "white",
 	fontWeight: "bold",
@@ -35,7 +35,7 @@ const LogoutButton = ({ logoutAction, propStyle }) => {
 };
 
 const OptionalRender = () => {
-	const [access, setAccess] = useState(true);
+	const [access, setAccess] = useState(false);
 	const [nMessages, setNMessages] = useState(0);
 
 	// const updateAccess = () => {
@@ -88,11 +88,13 @@ const OptionalRender = () => {
 					) : (
 						<p>There are no new messages</p>
 					)}
+					<button onClick={addMessages}>
+						{nMessages === 0
+							? "Add your first message"
+							: "Add new messages"}
+					</button>
 				</div>
 			) : null}
-			<button onClick={addMessages}>
-				{nMessages === 0 ? "Add your first message" : "Add new messages"}
-			</button>
 		</div>
 	);
 };

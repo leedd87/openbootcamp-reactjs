@@ -47,9 +47,9 @@ const TaskListComponent = () => {
 		};
 	}, [tasks]);
 
-	const changeCompleted = (id) => {
-		console.log("TODO: Cambiar estado de una tarea");
-	};
+	// const changeCompleted = (id) => {
+	// 	console.log("TODO: Cambiar estado de una tarea");
+	// };
 
 	function completeTask(task) {
 		console.log("Complete this Task:", task);

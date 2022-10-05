@@ -117,6 +117,12 @@ const TaskListComponent = () => {
 		);
 	}
 
+	const loadingStyle = {
+		color: "grey",
+		fontSize: "30px",
+		fontWeight: "bold",
+	};
+
 	return (
 		<div>
 			<div className="col-12">
@@ -129,7 +135,11 @@ const TaskListComponent = () => {
 							className="card-body"
 							style={{ position: "relative", height: "400px" }}
 						>
-							{taskTable}
+							{loading ? (
+								<p style={loadingStyle}>Loading tasks...</p>
+							) : (
+								taskTable
+							)}
 						</div>
 					</div>
 				</div>

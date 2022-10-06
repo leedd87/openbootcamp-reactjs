@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
+import * as Yup from "yup";
 
 const LoginFormik = () => {
 	const initialCredentials = {
@@ -35,7 +36,6 @@ const LoginFormik = () => {
 					<button type="submit">Login</button>
 				</Form>
 			</Formik>
-			;
 		</div>
 	);
 };
